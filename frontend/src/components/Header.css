@@ -1,0 +1,10 @@
+.header-container {
+    background-image: url('../assets/images/header-bg.png');
+    background-size: 100%;
+    width: 100%;
+    height: 22vh;
+}
+
+.date-text {
+    color: white;
+}

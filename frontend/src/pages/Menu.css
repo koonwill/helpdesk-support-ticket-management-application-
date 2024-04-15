@@ -1,0 +1,39 @@
+.menus-container {
+    margin-left: 5%;
+    margin-top: 2%;
+    grid-template-columns: auto auto auto auto auto;
+}
+
+.menu-button {
+    border-radius: 0.5vw;
+    font-size: 1.5vw;
+    width: 11vw;
+    height: 10vh;
+    border: 1px solid white;
+    background-color: #5c3724;
+}
+
+.menu-button:hover {
+    background-color: #794b37;
+}
+
+.create-menu-button {
+    margin-left: 3%;
+    font-size: 1.5vw;
+    width: 20vw;
+    border-radius: 10vw;
+    background-color: #3a8265;
+}
+
+.create-menu-button:hover {
+    background-color: #5cb08b;
+}
+
+.menus-cards-container {
+    border-radius: 0.5vw;
+    margin: 0 auto;
+    justify-content: center;
+    border: solid 3px #a1806e;
+    width: 100%;
+    height: 63vh;
+}

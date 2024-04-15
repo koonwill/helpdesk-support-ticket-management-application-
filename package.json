@@ -1,0 +1,19 @@
+{
+  "name": "lucky-home-cafe",
+  "version": "1.0.0",
+  "description": "![lucky-removebg-preview](https://github.com/thanidacwn/lucky-home-cafe/assets/92778351/3446c512-72b8-41b4-94b5-83fb08a33c01)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "frontend": "cd frontend && yarn install && yarn dev",
+    "backend": "cd backend && yarn install && yarn start",
+    "dev": "concurrently \"yarn frontend\" \"yarn backend\""
+  },
+  "author": "Lucky Home Cafe'",
+  "license": "MIT",
+  "dependencies": {
+    "@syncfusion/ej2-react-buttons": "^24.1.41",
+    "@syncfusion/ej2-react-navigations": "^24.1.41",
+    "concurrently": "^8.2.2"
+  }
+}
