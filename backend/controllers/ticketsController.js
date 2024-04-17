@@ -48,6 +48,12 @@ const updateTicketStatus = asyncHandler(async (req, res) => {
         if (!ticket) {
             return res.status(404).json({ message: "Ticket not found" });
         }
+        if (!req.body.status) {
+            return res.status(400).json({ message: "Status is required" });
+        }
+        if (!['pending', 'accepted', 'resolved', 'rejected'].includes(req.body.status)){
+            return res.status(400).json({ message: "Invalid status" });
+        }
         const updatedTicket = await tickets.findOneAndUpdate({ticket_id: req.params.id}, req.body, { new: true });
         res.status(200).json(updatedTicket);
     } catch (error) {

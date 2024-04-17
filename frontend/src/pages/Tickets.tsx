@@ -26,7 +26,7 @@ function Tickets() {
             <h1 className="tickets-title">Tickets</h1>
             <div className="tickets">
                 {tickets.map(ticket => (
-                    <div key={tickets._id} className="ticket">
+                    <div key={tickets.ticket_id} className="ticket">
                         <h2>{ticket.title}</h2>
                         <p>{ticket.description}</p>
                         <p>{ticket.contact}</p>
