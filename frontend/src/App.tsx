@@ -5,6 +5,7 @@ import Order from './pages/Order';
 import Promotions from './pages/Promotions';
 import Data from './pages/Data';
 import Logout from './pages/Logout';
+import Tickets from './pages/Tickets';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login />}/>
+          <Route path="/tickets" element={<Tickets />}/>
           <Route path="/menu" element={<Menu/>}/>
           <Route path="/order" element={<Order />}/>
           <Route path="/promotions" element={<Promotions />}/>
