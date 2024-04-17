@@ -1,5 +1,5 @@
 import './Button.css'
-import { ButtonProps } from "../../interfaces/Button";
+import { ButtonProps } from "../interfaces/Button";
 
 const Button: React.FC<ButtonProps> = ({ text, className }) => {
     return (

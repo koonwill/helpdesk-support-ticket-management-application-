@@ -1,18 +1,21 @@
-.Tickets {
-    text-align: center;
-  }
-  
-    .Tickets-header {
-        background-color: #282c34;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        font-size: calc(10px + 2vmin);
-        color: white;
-    }
-  
-  .Tickets-link {
-    color: #61dafb;
-  }
+.kanban {
+  display: flex;
+  align-items: flex-start;
+}
+.kanban__section {
+  width: 400px;
+  background-color: #383838;
+  padding: 10px;
+  border-radius: 10px;
+}
+.kanban__section ~ .kanban__section {
+  margin-left: 10px;
+}
+.kanban__section__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 10px 0 20px;
+}
+.kanban__section__content > * ~ * {
+  margin-top: 10px;
+}

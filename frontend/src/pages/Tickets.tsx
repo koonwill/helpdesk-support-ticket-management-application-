@@ -16,16 +16,24 @@ function Tickets() {
         };
 
         fetchTickets();
-    }, []); // Empty dependency array ensures the effect runs only once on component mount
+    }, []);
+
+    const onDragEnd = (result) => {};
+
 
     return (
         <div className="tickets-container">
             <h1 className="tickets-title">Tickets</h1>
             <div className="tickets">
                 {tickets.map(ticket => (
-                    <div className="ticket">
+                    <div key={tickets._id} className="ticket">
                         <h2>{ticket.title}</h2>
                         <p>{ticket.description}</p>
+                        <p>{ticket.contact}</p>
+                        <p>{ticket.information}</p>
+                        <p>{ticket.created_date}</p>
+                        <p>{ticket.updated_date}</p>
+                        <p>{ticket.status}</p>
                         {/* Add more ticket details here */}
                     </div>
                 ))}

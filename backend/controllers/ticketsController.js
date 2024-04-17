@@ -31,6 +31,9 @@ const updateTicket = asyncHandler(async (req, res) => {
         if (!ticket) {
             return res.status(404).json({ message: "Ticket not found" });
         }
+        const utc = new Date()
+        utc.setHours(utc.getHours() + 7)
+        req.body.updated_date = utc
         const updatedTicket = await tickets.findByIdAndUpdate(req.params.id, req.body, { new: true });
         res.status(200).json(updatedTicket);
     } catch (error) {
