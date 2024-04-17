@@ -27,14 +27,14 @@ const getTickets = asyncHandler(async (req, res) => {
 
 const updateTicket = asyncHandler(async (req, res) => {
     try {
-        const ticket = await tickets.findOne({ _id: req.params.id });
+        const ticket = await tickets.findOne({ ticket_id: req.params.id });
         if (!ticket) {
             return res.status(404).json({ message: "Ticket not found" });
         }
         const utc = new Date()
         utc.setHours(utc.getHours() + 7)
         req.body.updated_date = utc
-        const updatedTicket = await tickets.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        const updatedTicket = await tickets.findOneAndUpdate({ticket_id: req.params.id}, req.body, { new: true });
         res.status(200).json(updatedTicket);
     } catch (error) {
         console.error(error);
@@ -44,11 +44,11 @@ const updateTicket = asyncHandler(async (req, res) => {
 
 const updateTicketStatus = asyncHandler(async (req, res) => {
     try {
-        const ticket = await tickets.findOne({ _id: req.params.id });
+        const ticket = await tickets.findOne({ ticket_id: req.params.id });
         if (!ticket) {
             return res.status(404).json({ message: "Ticket not found" });
         }
-        const updatedTicket = await tickets.findByIdAndUpdate(req.params.id, { status: req.body.status }, { new: true });
+        const updatedTicket = await tickets.findOneAndUpdate({ticket_id: req.params.id}, req.body, { new: true });
         res.status(200).json(updatedTicket);
     } catch (error) {
         console.error(error);

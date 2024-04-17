@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 const ticketsSchema = new mongoose.Schema(
     {
-        id: {
+        ticket_id: {
             type: Number,
             required: true
         },
@@ -36,7 +36,7 @@ const ticketsSchema = new mongoose.Schema(
             default: 'pending'
         },
     },
-    { collection: 'Tickets', versionKey: false }
+    { collection: 'Tickets', versionKey: false}
 );
 
 const Tickets = mongoose.model('Tickets', ticketsSchema);
