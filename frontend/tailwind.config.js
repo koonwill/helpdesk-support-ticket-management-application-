@@ -7,7 +7,10 @@ export default {
     "./public/index.html"
   ],
   theme: {
-    extend: {},
+    extend: {
+      "mainBackgroundColor": '#0D1117',
+      "columnBackgroundColor": '#161B22',
+    },
   },
   plugins: [],
 }

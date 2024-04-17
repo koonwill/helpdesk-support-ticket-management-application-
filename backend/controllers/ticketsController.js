@@ -34,7 +34,7 @@ const updateTicket = asyncHandler(async (req, res) => {
         const utc = new Date()
         utc.setHours(utc.getHours() + 7)
         req.body.updated_date = utc
-        const updatedTicket = await tickets.findOneAndUpdate({ticket_id: req.params.id}, req.body, { new: true });
+        const updatedTicket = await tickets.findOneAndUpdate({ ticket_id: req.params.id }, req.body, { new: true });
         res.status(200).json(updatedTicket);
     } catch (error) {
         console.error(error);
@@ -51,10 +51,10 @@ const updateTicketStatus = asyncHandler(async (req, res) => {
         if (!req.body.status) {
             return res.status(400).json({ message: "Status is required" });
         }
-        if (!['pending', 'accepted', 'resolved', 'rejected'].includes(req.body.status)){
+        if (!['pending', 'accepted', 'resolved', 'rejected'].includes(req.body.status)) {
             return res.status(400).json({ message: "Invalid status" });
         }
-        const updatedTicket = await tickets.findOneAndUpdate({ticket_id: req.params.id}, req.body, { new: true });
+        const updatedTicket = await tickets.findOneAndUpdate({ ticket_id: req.params.id }, req.body, { new: true });
         res.status(200).json(updatedTicket);
     } catch (error) {
         console.error(error);
