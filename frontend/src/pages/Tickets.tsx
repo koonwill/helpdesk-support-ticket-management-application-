@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import PlusIcon from '../assets/PlusIcon';
 
 function Tickets() {
     const [tickets, setTickets] = useState([]);
@@ -33,25 +34,31 @@ function Tickets() {
           px-[40px]
       "
         >
-            <h1 className="tickets-title">Tickets</h1>
-            <div className="tickets">
-                {tickets.map(ticket => (
-                    <div key={tickets.ticket_id} className="ticket">
-                        <h2>{ticket.title}</h2>
-                        <p>{ticket.description}</p>
-                        <p>{ticket.contact}</p>
-                        <p>{ticket.information}</p>
-                        <p>{ticket.created_date}</p>
-                        <p>{ticket.updated_date}</p>
-                        <p>{ticket.status}</p>
-                        {/* Add more ticket details here */}
-                    </div>
-                ))}
-            </div>
-            <div className="add-tickets-bttn">
-                <button className='' justify-center>Add Ticket</button>
+            <div className="m-auto flex gap-4">
+                <div className="add-tickets-bttn">
+                    <button className="
+                    h-[60px]
+                    w-[350px]
+                    min-w-[350px]
+                    cursor-pointer
+                    rounded-lg
+                    bg-mainBackgroundColor
+                    border-2
+                    border-columnBackgroundColor
+                    p-4
+                    ring-rose-500
+                    hover:ring-2
+                    gap-2
+                    flex
+                    "
+                    >
+                        <PlusIcon  />
+                        Add Ticket
+                    </button>
+                </div>
             </div>
         </div>
+
     );
 }
 
